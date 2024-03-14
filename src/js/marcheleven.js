@@ -3,13 +3,16 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 var scene = new THREE.Scene();
 
-var renderer = new THREE.WebGLRenderer();
+var renderer = new THREE.WebGLRenderer({
+  alpha: true,
+  antialias: true,
+});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 var aspectRatio = window.innerWidth / window.innerHeight;
 var camera = new THREE.PerspectiveCamera(75, aspectRatio, 1, 10000);
-camera.position.z = 350;
+camera.position.z = 550;
 scene.add(camera);
 const orbit = new OrbitControls(camera, renderer.domElement);
 orbit.update();
