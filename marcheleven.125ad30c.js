@@ -587,12 +587,15 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var _three = require("three");
 var _orbitControls = require("three/examples/jsm/controls/OrbitControls");
 var scene = new _three.Scene();
-var renderer = new _three.WebGLRenderer();
+var renderer = new _three.WebGLRenderer({
+    alpha: true,
+    antialias: true
+});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 var aspectRatio = window.innerWidth / window.innerHeight;
 var camera = new _three.PerspectiveCamera(75, aspectRatio, 1, 10000);
-camera.position.z = 350;
+camera.position.z = 550;
 scene.add(camera);
 const orbit = new (0, _orbitControls.OrbitControls)(camera, renderer.domElement);
 orbit.update();

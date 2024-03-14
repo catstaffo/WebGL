@@ -608,7 +608,9 @@ var _uranusTextureJpgDefault = parcelHelpers.interopDefault(_uranusTextureJpg);
 var _neptuneTextureJpg = require("../images/planetTextures/neptuneTexture.jpg");
 var _neptuneTextureJpgDefault = parcelHelpers.interopDefault(_neptuneTextureJpg);
 const scene = new _three.Scene();
-const renderer = new _three.WebGLRenderer();
+const renderer = new _three.WebGLRenderer({
+    antialias: true
+});
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 document.body.appendChild(renderer.domElement);
